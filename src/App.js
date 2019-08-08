@@ -25,7 +25,7 @@ class App extends React.Component {
   //create a filterDogs function
 
   render() {
-    console.log("state", this.state.dogData)
+    // console.log("state", ) here
     //map through filtered dogs and pass props to VisibleDogs component
     //show VisibleDogs under FilterForm
     // const visibleDogs = 
