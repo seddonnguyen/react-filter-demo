@@ -5,9 +5,6 @@ import './App.css';
 import FilterForm from './components/FilterForm'
 import VisibleDogs from './components/VisibleDogs'
 
-
-
-
 class App extends React.Component {
   constructor() {
     super()
@@ -38,10 +35,15 @@ class App extends React.Component {
   render() {
 
     const visibleDogs = this.state.filteredDogs.map(dog =>
-      <VisibleDogs name={ dog.name } temperament={ dog.temperament } origin={ dog.origin } purpose={ dog.bred_for } />)
+      <VisibleDogs
+        name={ dog.name }
+        temperament={ dog.temperament }
+        purpose={ dog.bred_for }
+      />)
+      
     return (
       <div className="App">
-        <FilterForm dogs={ this.state.filteredDogs } match={ this.props.match } onChange={ this.filterDogs } />
+        <FilterForm filterDogs={ this.filterDogs } />
         { visibleDogs }
       </div>
     );

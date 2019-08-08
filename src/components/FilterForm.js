@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 
 class FilterForm extends Component {
@@ -13,10 +12,11 @@ class FilterForm extends Component {
         this.setState({
             dogFilter: e.target.value
         })
-        this.props.onChange(e.target.value)
+        this.props.filterDogs(this.state.dogFilter)
     }
 
     render() {
+
         return (
             <div>
                 <label htmlFor="filter">Filter by Dog: </label>

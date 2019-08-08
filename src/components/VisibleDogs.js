@@ -2,7 +2,6 @@ import React from 'react'
 
 //pass props to visible dogs component
 const VisibleDogs = (props) => {
-    console.log("visible dog component props", props)
     return (
         <div>
 
