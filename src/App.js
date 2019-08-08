@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import FilterForm from './components/FilterForm'
+// import VisibleDogs from './components/VisibleDogs'
+
+
+
+
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      dogData: [],
+      filteredDogs: []
+    }
+  }
+
+  componentDidMount() {
+    fetch("https://api.thedogapi.com/v1/breeds")
+      .then(response => response.json())
+      .then(data => this.setState({ dogData: data }))
+  }
+
+  //create a filterDogs function
+
+  render() {
+    console.log("state", this.state.dogData)
+    //map through filtered dogs and pass props to VisibleDogs component
+    //show VisibleDogs under FilterForm
+    // const visibleDogs = 
+
+    return (
+      <div className="App">
+        {/* pass props to filter form */ }
+        <FilterForm />
+
+      </div>
+    );
+  }
 }
 
 export default App;
