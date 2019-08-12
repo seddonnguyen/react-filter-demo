@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 
 const FilterForm = (props) => {
     // handleChange function here to set dogFilter in state to value of event target
@@ -7,11 +7,6 @@ const FilterForm = (props) => {
     const handleChange = (event) => {
         props.filterDogs(event.target.value)
     }
-
-    //pass event target value to filterDogs function in handleChange
-
-
-
 
     return (
         <div>
